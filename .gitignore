@@ -9,7 +9,10 @@
 /coverage
 
 # production
+/out
 /build
+/.next
+/.next-export
 
 # misc
 .DS_Store
