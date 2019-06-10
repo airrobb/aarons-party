@@ -11,22 +11,31 @@ const Tasty = styled.a`
   font-size: 10rem;
   text-align: center;
   transition: text-shadow 0.5s;
+  ${({ touching }) => (touching ? `text-shadow: ${rainbow};` : "")}
   &:hover {
     text-shadow: ${rainbow};
   }
 
   @media (max-width: 768px) {
-    font-size: 13vw;
+    font-size: 16vw;
   }
 `;
 
 export default function Home() {
+  const [touching, setTouched] = React.useState(false);
+
   return (
     <div className="page">
       <Head>
         <title>Aaron's Party</title>
       </Head>
-      <Tasty>Come Get It</Tasty>
+      <Tasty
+        touching={touching}
+        onTouchStart={() => setTouched(true)}
+        onTouchEnd={() => setTouched(false)}
+      >
+        Come Get It
+      </Tasty>
     </div>
   );
 }
