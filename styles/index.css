@@ -3,10 +3,17 @@
   margin: 0;
 }
 
+html,
+body,
+#__next {
+  height: 100%;
+  width: 100%;
+}
+
 .page {
   display: grid;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   align-content: center;
   justify-content: center;
 }

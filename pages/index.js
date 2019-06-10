@@ -28,6 +28,10 @@ export default function Home() {
     <div className="page">
       <Head>
         <title>Aaron's Party</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        />
       </Head>
       <Tasty
         touching={touching}
