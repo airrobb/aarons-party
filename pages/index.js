@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import Head from "next/head";
 
-import content from "../content/home.md";
-
 import "../styles/index.css";
+import { tasteTheRainbow } from "../utility/fun";
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div className="page">
-        <Head>
-          <title>Aaron's Party</title>
-        </Head>
-        <h1 className="page-title">Come get it</h1>
-      </div>
-    );
-  }
+const rainbow = tasteTheRainbow();
+
+export default function Home() {
+  const [hovering, setHover] = React.useState(false);
+
+  return (
+    <div className="page">
+      <Head>
+        <title>Aaron's Party</title>
+      </Head>
+      <h1
+        className="page-title"
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        style={{ textShadow: hovering ? rainbow : null }}
+      >
+        Come Get It
+      </h1>
+    </div>
+  );
 }
